@@ -2,8 +2,8 @@ from matrix import *
 import matplotlib.pyplot as plt
 
 matrices = []
-maximum = 200
-sz = 200
+maximum = 250
+sz = 250
 
 for index in range(0, maximum + 1):
     alpha = float(index)/float(maximum)
@@ -11,7 +11,7 @@ for index in range(0, maximum + 1):
 
 plt.figure()
 for mat in matrices:
-    plt.plot(mat.eigenvalues, mat.alphas, '.', color='b', markersize=1.8)
+    plt.plot(mat.eigenvalues, mat.alphas, '.', color='r', markersize=1.8)
 
 plt.axis([-4.5, 4.5, 0, 1])
 plt.show()
