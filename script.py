@@ -2,18 +2,11 @@ from matrix import *
 import matplotlib.pyplot as plt
 
 values = []
-maximum = 200
-sz = 200
 
-class AlphasList(list):
-    def __init__(self, alpha, iterable):
-        self.alpha = alpha
-
-        super(AlphasList, self).__init__(iterable)
-
-    def __getitem__(self, item):
-        """Since all the values are the same, don't actually do the lookup"""
-        return self.alpha
+# Vertical indices
+maximum = 100
+# Horizontal indices 
+sz = 100
 
 
 def _make_alphas(a, size):
@@ -22,7 +15,7 @@ def _make_alphas(a, size):
 
 for index in range(0, maximum + 1):
     alpha = float(index)/float(maximum)
-    alpha_list = AlphasList(alpha, _make_alphas(alpha, sz))
+    alpha_list = _make_alphas(alpha, sz)
     eigenvalues = matrix_eigenvalues(0, alpha, sz)
 
     values.append((eigenvalues, alpha_list))
